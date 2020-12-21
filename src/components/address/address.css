@@ -1,0 +1,68 @@
+.data-container{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 10px 0%;
+    background-color: #F7F7F7;
+    
+    
+}
+.data-text{
+
+text-align: left;
+font: normal normal 100 18px/22px Lato;
+letter-spacing: 0px;
+color: #3D3D3D;
+opacity: 1;
+}
+.data-details{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 60%;
+}
+.data-name{
+    background-color: white;
+    width: 9%;
+}
+.data-address{
+    background-color: white;
+    width: 30%;
+}
+.data-city{
+    background-color: white;
+    width: 9%;
+}
+.data-state{
+    background-color: white;
+    width: 9%;
+}
+.data-zip{
+    background-color: white;
+    width: 6%;
+}
+.data-phone{
+    background-color: white;
+    width: 15%;
+}
+.data-delete{
+    background-color: white;
+    width: 3%;
+}
+.data-update{
+    background-color: white;
+    width: 3%;
+}
+.image-delete{
+    width: 90%;
+    height: 90%;
+    cursor: pointer;
+}
+.image-edit{
+    width: 90%;
+    height: 90%;
+    cursor: pointer;
+}

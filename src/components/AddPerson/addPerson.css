@@ -1,0 +1,200 @@
+.header {
+    padding: 40px 10%;
+    background-color: #ffffff;
+}
+.logo {
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 0px sollid green;
+  width: 20%;
+  }
+  .logo-img{
+    border: solid 0px #42515f;
+}
+  .header-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+}
+  .address-text {
+    padding: 0px 10%;
+    font: normal normal bold 20px/10px Montserrat;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0px;
+    color: rgb(0, 132, 255);
+    text-transform: capitalize;
+  }
+  .address-book {
+    color: #42515f;
+  }
+  .addressbook-main{
+    height: 100%;
+    min-height: calc(100% - 80px);
+    background-color: #f7f7f7;  
+}
+.content{
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0%;
+}
+*{ box-sizing: border-box;}
+.form{
+    width: 60%;
+    background: #ffffff;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #f5f5f5;
+    border-radius: 12px;
+    opacity: 1;
+}
+
+.form-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:#008CFF;
+    padding: 20px;
+    
+    
+}
+.form-head-text{
+    font: normal normal normal 28px/37px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-align: center;
+    
+}
+.blank{
+    width: 30%;
+}
+.form-cancel{
+    text-align: right;
+    padding: 0 10%;
+}
+
+
+.row{
+    flex-direction: column;
+    padding: 0 10%;
+}
+.label{
+    min-width: 140px;
+}
+
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.text{
+    font-size: 16px;
+    color: #42515f;
+    opacity: 1;
+    font-family: Roboto;
+}
+
+.input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+.col{
+    height: 100px;
+    
+}
+.form-body{
+    padding: 30px 20px;
+}
+.drop-down{
+    width: 200px;
+    height: 50px;
+}
+
+.drop-container {
+    display: flex;
+    flex-wrap:row wrap;
+    align-items: center;
+    padding: 0 10%;
+    
+}
+.sidebar{
+    flex:1 0 0; border:0px solid green;
+}
+.drop{
+    width: 80%;
+    height: 40px;
+}
+.input-zip{
+    width: 100%;
+    height: 40px;
+}
+.buttonParent{
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    justify-content: flex-end;
+    text-align: right;
+}
+.submitButton{
+    border: none;
+    background-color: #f5f5f5;
+    margin-right: 10px;
+    border: 1px solid #707070;
+    margin-right: 30px;
+}
+.button{
+    font-size: 20px;
+    font-family: Roboto;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    background-color:rgb(223, 223, 223) ;
+    border: none;
+    font-weight: 400;
+    min-width: 140px;
+    padding: 7px 7px;
+    border: 1px solid #707070;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.button-container{
+    
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    flex-wrap:row wrap;
+    align-items: right;
+    padding-bottom: 50px;
+    padding-right: 11.5%;
+}
+.button-row{
+    align-items: right;
+}
+.error{
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+    text-align: end;
+}
+
+.text-error{
+    color: red;
+}
+select{
+    padding: 1px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font: normal normal normal 16px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    background-color: transparent;
+}

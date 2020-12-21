@@ -1,0 +1,67 @@
+[
+    {
+      "region": "Bihar",
+      "city": [
+        {
+          "name": "Patna"
+          
+        },
+        {
+          "name": "Gaya"
+         
+        },
+        {
+          "name": "Darbhanga"
+        }
+      ]
+    },
+    {
+      "region": "Maharashtra",
+      "city": [
+        {
+          "name": "Mumbai"
+          
+        },
+        {
+          "name": "Pune"
+        },
+        {
+          "name": "Nagpur"
+        }
+      ]
+    }
+    ,
+    {
+      "region": "Uttar Pradesh",
+      "city": [
+        {
+          "name": "Kanpur"
+          
+        },
+        {
+          "name": "noida"
+        },
+        {
+          "name": "Agra"
+        },
+        {
+          "name": "Gaziabad"
+        }
+      ]
+    },
+    {
+      "region": "West Bengal",
+      "city": [
+        {
+          "name": "Kolkata"
+          
+        },
+        {
+          "name": "Berhampore"
+        },
+        {
+          "name": "Siliguri"
+        }
+      ]
+    }
+  ]

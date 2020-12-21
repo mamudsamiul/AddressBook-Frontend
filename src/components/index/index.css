@@ -1,0 +1,58 @@
+.index-container{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 0px 0%;
+    background-color: #F7F7F7;
+    
+    
+}
+.index-text{
+    text-align: left;
+    font: normal normal bold 18px/22px Lato;
+    letter-spacing: 0px;
+    color: #658292;
+    text-transform: capitalize;
+    opacity: 1;
+}
+.index-details{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F7F7F7;
+    border-radius: 12px;
+    padding: 20px;
+    width: 60%;
+}
+.index-name{
+    background-color: #F7F7F7;
+    width: 9%;
+}
+.index-address{
+    background-color: #F7F7F7;
+    width: 30%;
+}
+.index-city{
+    background-color: #F7F7F7;
+    width: 9%;
+}
+.index-state{
+    background-color: #F7F7F7;
+    width: 9%;
+}
+.index-zip{
+    background-color: #F7F7F7;
+    width: 6%;
+}
+.index-phone{
+    background-color: #F7F7F7;
+    width: 15%;
+}
+.index-delete{
+    background-color: #F7F7F7;
+    width: 3%;
+}
+.index-update{
+    background-color: #F7F7F7;
+    width: 3%;
+}
