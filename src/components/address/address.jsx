@@ -25,25 +25,30 @@ const Address=({person,updates})=>{
         <div>
             <div className="data-container">
                 <div className="data-details">
-                    <span className="data-name data-text" >
-                        {person.name}
+                    <span className="data-name " >
+                        <span className="data-text">{person.name}</span> 
                     </span>
-                    <span className="data-address data-text">
-                    {person.address}
+                    <span className="data-address">
+                    <span className="data-text"> {person.address}</span>
+                   
                     </span>
-                    <span className="data-city data-text">
-                    {person.city}
+                    <span className="data-city">
+                    <span className="data-text">{person.city}</span>
+                    
                     </span>
-                    <span className="data-state data-text">
-                    {person.state}
+                    <span className="data-state">
+                    <span className="data-text"> {person.state}</span>
+                   
                     </span>
-                    <span className="data-zip data-text">
-                    {person.zip}
+                    <span className="data-zip">
+                    <span className="data-text">{person.zip}</span>
+                    
                     </span>
-                    <span className="data-phone data-text">
-                    {person.phone}
+                    <span className="data-phone">
+                    <span className="data-text">{person.phone}</span>
+                    
                     </span>
-                    <span className="data-delete data-text">
+                    <span className="data-delete">
                         <img className="image-delete" src={Delete} type="button" onClick={()=>{deleteAddress(person.id);}}/>
                         
                     </span>
