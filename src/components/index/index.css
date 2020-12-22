@@ -10,7 +10,7 @@
 }
 .index-text{
     text-align: left;
-    font: normal normal bold 18px/22px Lato;
+    font: normal normal bold 18px/15px Lato;
     letter-spacing: 0px;
     color: #658292;
     text-transform: capitalize;
@@ -19,10 +19,11 @@
 .index-details{
     display: flex;
     justify-content: space-between;
+    
     background-color: #F7F7F7;
     border-radius: 12px;
     padding: 20px;
-    width: 60%;
+    width: 80%;
 }
 .index-name{
     background-color: #F7F7F7;
@@ -55,4 +56,12 @@
 .index-update{
     background-color: #F7F7F7;
     width: 3%;
+}
+@media only screen and (max-width: 640px) {
+    
+    .index-details{
+        font: normal normal bold 18px/30px Lato;
+        flex-direction: column;
+    }
+    
 }

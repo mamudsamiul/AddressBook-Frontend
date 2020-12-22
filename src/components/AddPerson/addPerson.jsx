@@ -8,6 +8,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useParams, Link, withRouter } from 'react-router-dom';
 import AddressBook from "../../services/addressbook-service"
 const AddPerson=(props)=>{
+    let counter=0;
     const service= new AddressBook();
     const nameRegex = RegExp("^[A-Z]{1}[a-zA-Z\\s]{2,}[A-Za-z\s]{0,}$");
     const phoneRegex = RegExp("^\\d{2}[1-9]\\d{7}$");
@@ -17,11 +18,19 @@ const AddPerson=(props)=>{
     const [cityList, setCityList] = useState([]);
     const [formValue, setForm] = useState([]);
     const [errorValue,setError]= useState([]);
+    const [blankerror,setBlankError]= useState([]);
     useEffect(async()=>{
         setError({
             nameerror:"",
             phoneerror:"",
             ziperror:"",
+            addresserror:""
+        })
+        setBlankError({
+            nameblankerror:"",
+            phoneblankerror:"",
+            zipblankerror:"",
+            addressblankerror:""
         })
         if(props.location.aboutProps.edit===false){
         }else{
@@ -67,33 +76,62 @@ const AddPerson=(props)=>{
             }
         )
     }
+    const notBlank=()=>{
+        if(counter==0){
+            let address=""
+            if(typeof(formValue.address)=="undefined"){
+                address="Field Required"
+            }
+            setBlankError({...blankerror,addressblankerror:address})
+            counter++
+        }
+        else{
+
+        }
+        }
     
     const handleNameChange=(event) =>{
-            console.log({formValue}) 
+            
             setForm({...formValue,name: event.target.value});
             if(nameRegex.test(event.target.value)){
                 
                 setError({...errorValue,nameerror: ""});
               }else{
                 setError({...errorValue,nameerror: "incorrect name"});
+                
               }
+              console.log({formValue})
+              console.log({blankerror})
               console.log({errorValue})
             
     }
       const handleAddressChange=(event)=> {
-          
-        
+
         setForm({...formValue,address: event.target.value});
+        if(typeof(formValue.address)!="undefined" && formValue.address!==""){
+            setError({...errorValue,addresserror: ""});
+        }
+        else{
+            setError({...errorValue,addresserror: "incorrect address"});
+            
+          }
+        console.log({formValue})
+              console.log({blankerror})
+              console.log({errorValue})
       }
+
       const handlePhoneChange=(event)=> {
+        
         setForm({...formValue,phone: event.target.value});
         if(phoneRegex.test(event.target.value)){
             
             setError({...errorValue,phoneerror: ""});
           }else{
-            setError({...errorValue,phoneerror: "incorrect Phone No"});
+            setError({...errorValue,phoneerror:"incorrect Phone No"});
           }
-          console.log({errorValue})
+          console.log({formValue})
+              console.log({blankerror})
+              console.log({errorValue})
             
             
       }
@@ -109,14 +147,18 @@ const AddPerson=(props)=>{
         setForm({...formValue,state: event.region});
       }
       const handleZipChange=(event)=> {
+        
         setForm({...formValue,zip: event.target.value});
         if(zipRegex.test(event.target.value)){
            
             setError({...errorValue,ziperror: ""});
           }else{
-            setError({...errorValue,ziperror: "incorrect Pin code"});
+            setError({...errorValue,ziperror:"Incorrect Pincode"});
+  
           }
-          console.log({errorValue})
+            console.log({formValue})
+            console.log({blankerror})
+           console.log({errorValue})
         
             
       }
@@ -154,8 +196,8 @@ const AddPerson=(props)=>{
         event.preventDefault(); 
     }
 
-    const reset=()=>{
-        setForm({});
+    const resetHover=()=>{
+        console.log("asdsdfs");
     }
     
     const enableButton=()=>{
@@ -210,13 +252,11 @@ const AddPerson=(props)=>{
                             <textarea className="input" id="address" name="address" value={formValue.address} onChange={handleAddressChange}
                             style={{ height: '100px' }}></textarea>
                         </div>
-                        <div className="drop-container">
-                            <label className="label text sidebar" htmlFor="citytitle">City</label>
-                            <label className="label text sidebar" htmlFor="statetitle">State</label>
-                            <label className="label text sidebar" htmlFor="ziptitle">Zip Code</label>
-                        </div>
+                        <div className="error" > {errorValue.addresserror} </div>
+                        
                         <div className="drop-container">
                             <div className="label text sidebar">
+                                <label> City</label>
                                 <Select className="drop" 
                                 value={pcity} 
                                 options={cityList} 
@@ -225,6 +265,7 @@ const AddPerson=(props)=>{
                                 placeholder="Select City"/>
                             </div>
                             <div className="label text sidebar">
+                                <label>State</label>
                                 <Select className="drop" 
                                 value={pstate} 
                                 options={data} 
@@ -235,6 +276,7 @@ const AddPerson=(props)=>{
                                 
                             </div>
                             <div className="label text sidebar">
+                                <label>Zip Code</label>
                                 <input className="input-zip" type="text" value={formValue.zip} onChange={handleZipChange}></input>
                             </div>
                             
@@ -258,11 +300,13 @@ const AddPerson=(props)=>{
                                    
                                    )
                                 }/>
-                                <button type="reset" className="resetButton button" >Reset</button>
+                                <button type="reset" className="resetButton button">Reset</button>
                                 
                             </div>
                         </div>
-                        <div></div>
+                    <div>
+                        
+                    </div>
                 </form>
 
             </div>

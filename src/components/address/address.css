@@ -1,10 +1,10 @@
 .data-container{
+
     display: flex;
-    justify-content: space-between;
-    flex-flow: column wrap;
+    flex-flow: column wrap;;
     align-items: center;
     padding: 10px 0%;
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
     
     
 }
@@ -14,15 +14,16 @@ text-align: left;
 font: normal normal 100 18px/22px Lato;
 letter-spacing: 0px;
 color: #3D3D3D;
-opacity: 1;
+opacity: 1; 
 }
 .data-details{
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 12px;
+    flex-direction: row;
     padding: 20px;
-    width: 60%;
+    width: 80%;
 }
 .data-name{
     background-color: white;
@@ -57,12 +58,78 @@ opacity: 1;
     width: 3%;
 }
 .image-delete{
-    width: 90%;
-    height: 90%;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
 }
 .image-edit{
-    width: 90%;
-    height: 90%;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
+}
+@media only screen and (max-width: 696px) {
+    .submitButton{
+        border: none;
+        background-color: #f5f5f5;
+        border: 1px solid #707070;
+        margin-right: 0px;
+        margin-left:50px ;
+    }
+}
+@media only screen and (max-width: 1480px) {
+    .data-text{
+        font: normal normal 100 13px/22px Lato; 
+        }
+}
+@media only screen and (max-width: 1130px) {
+    .data-details{
+       
+        flex-direction: column;
+    }
+    .data-text{
+        font: normal normal bold 18px/30px Lato;
+    }
+    .data-name{
+        background-color: white;
+        width: 100%;
+    }
+    .data-address{
+        background-color: white;
+        width: 100%;
+    }
+    .data-city{
+        background-color: white;
+        width: 100%;
+    }
+    .data-state{
+        background-color: white;
+        width: 100%;
+    }
+    .data-zip{
+        background-color: white;
+        width: 100%;
+    }
+    .data-phone{
+        background-color: white;
+        width: 100%;
+    }
+    .data-delete{
+        background-color: white;
+        width: 100%;
+    }
+    .data-update{
+        background-color: white;
+        width: 100%;
+    }
+    .image-delete{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+    .image-edit{
+        
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
 }
