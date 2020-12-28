@@ -3,10 +3,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from "H:/React App/addressbook-frontend/src/assets/logo.jpg"
 import "./addressbook.css"
-import Address from "../address/address"
 import AllAddress from "../allAddress/alladdress"
 import Update from "../../components/Update/update"
-import {Link} from "react-router-dom"
 import Index from "../index/index"
 class Addressbook extends React.Component{
 render(params){

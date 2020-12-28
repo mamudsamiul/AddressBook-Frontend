@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import AddPerson from "./components/AddPerson/addPerson"
 import Addressbook from "./components/Addressbook/addressbook"
 function App() {

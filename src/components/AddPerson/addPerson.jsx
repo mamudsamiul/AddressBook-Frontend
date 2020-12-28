@@ -5,7 +5,7 @@ import "./addPerson.css"
 import Select from "react-select";
 import data from "../../data/data.json"
 import { toast, ToastContainer } from 'react-toastify';
-import { useParams, Link, withRouter } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import AddressBook from "../../services/addressbook-service"
 const AddPerson=(props)=>{
     let counter=0;
@@ -76,19 +76,7 @@ const AddPerson=(props)=>{
             }
         )
     }
-    const notBlank=()=>{
-        if(counter==0){
-            let address=""
-            if(typeof(formValue.address)=="undefined"){
-                address="Field Required"
-            }
-            setBlankError({...blankerror,addressblankerror:address})
-            counter++
-        }
-        else{
-
-        }
-        }
+    
     
     const handleNameChange=(event) =>{
             
@@ -100,9 +88,7 @@ const AddPerson=(props)=>{
                 setError({...errorValue,nameerror: "incorrect name"});
                 
               }
-              console.log({formValue})
-              console.log({blankerror})
-              console.log({errorValue})
+            
             
     }
       const handleAddressChange=(event)=> {
@@ -115,9 +101,7 @@ const AddPerson=(props)=>{
             setError({...errorValue,addresserror: "incorrect address"});
             
           }
-        console.log({formValue})
-              console.log({blankerror})
-              console.log({errorValue})
+        
       }
 
       const handlePhoneChange=(event)=> {
@@ -129,19 +113,17 @@ const AddPerson=(props)=>{
           }else{
             setError({...errorValue,phoneerror:"incorrect Phone No"});
           }
-          console.log({formValue})
-              console.log({blankerror})
-              console.log({errorValue})
+       
             
             
       }
       const handleCityChange=(event) =>{
-        console.log(event.name)
+        
         setPcity(event)
         setForm({...formValue,city: event.name});
       }
       const handleStateChange=(event)=> {
-          console.log(event.region)
+        
           setPstate(event)
           setCityList(event.city)
         setForm({...formValue,state: event.region});
@@ -156,16 +138,14 @@ const AddPerson=(props)=>{
             setError({...errorValue,ziperror:"Incorrect Pincode"});
   
           }
-            console.log({formValue})
-            console.log({blankerror})
-           console.log({errorValue})
+        
         
             
       }
 
     const handleSubmit= (event)=> {
        if(props.location.aboutProps.edit===false){
-        console.log(formValue);
+       
         postData(formValue);
         setForm({...formValue,
             name: '',
@@ -175,8 +155,7 @@ const AddPerson=(props)=>{
             state:'',
             zip:''
         })
-        setPstate({...pstate,region:''})
-          setPcity({...pcity,name:''})
+        
 
     }else{
         console.log(formValue.name);
@@ -189,9 +168,10 @@ const AddPerson=(props)=>{
             state:'',
             zip:''
         })
-        setPstate({...pstate,region:''})
-          setPcity({...pcity,name:''})
+        
     }
+    setPstate({...pstate,region:data.data.state})
+        setPcity({...pcity,name:data.data.city})
         console.log(formValue);
         event.preventDefault(); 
     }
@@ -200,14 +180,6 @@ const AddPerson=(props)=>{
         console.log("asdsdfs");
     }
     
-    const enableButton=()=>{
-        if(errorValue.nameerror==="" && errorValue.phoneerror==="" && errorValue.ziperror===""){
-           
-        }
-        else{
-            
-        }
-    }
     return(
         
         <div className="addressbook-main">
@@ -286,7 +258,7 @@ const AddPerson=(props)=>{
                     </div>
                     <div className="button-container">
                         <div className="button-row">
-                            
+                           
                                 <input type="submit" className="button submitButton" value="Add" disabled={
                                    !( errorValue.nameerror==="" &&
                                    errorValue.phoneerror==="" &&
