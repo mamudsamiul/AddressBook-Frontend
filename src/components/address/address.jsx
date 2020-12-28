@@ -1,22 +1,31 @@
-import React,{ useState, useEffect } from "react"
+import React from "react"
 import { toast } from 'react-toastify';
 import Edit from "H:/React App/addressbook-frontend/src/assets/edit.png"
 import Delete from "H:/React App/addressbook-frontend/src/assets/delete.png"
 import "./address.css"
-import { useParams, Link, withRouter,Route } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import AddressBook from "../../services/addressbook-service"
 const Address=({person,updates})=>{
     const service= new AddressBook();
     const deleteAddress=(id)=>{
-        service.deletePerson(id).then(
-            (response)=>{
-                toast.success("Deleted sucessfully")
-                updates(id);
-            },
-            (error)=>{
-                toast.error("Unable to delete")
-            }
-        )
+        var accept=window.confirm("Do you want to delete the address ??");
+        
+        if(accept){
+            service.deletePerson(id).then(
+                (response)=>{
+                    toast.success("Deleted sucessfully")
+                    updates(id);
+                },
+                (error)=>{
+                    toast.error("Unable to delete")
+                }
+            )
+        }
+        else{
+            toast.error("Delete Rejected by you!!")
+        }
+        
+        
     }
     const editAddress=(key)=>{
         console.log(key)        
